@@ -8,7 +8,7 @@ export default function Products() {
 const [data,setData]=useState([])
 
 useEffect(()=>{
-  axios.get('http://localhost:5000/products')
+  axios.get('https://product-selling-backend.vercel.app/products')
   .then(res=>{
   setData(res?.data)
   })

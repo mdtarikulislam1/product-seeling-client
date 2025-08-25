@@ -28,7 +28,7 @@ export default function AddProductForm() {
     if (!formData) return;
 
     axios
-      .post("http://localhost:5000/addProduct", formData)
+      .post("https://product-selling-backend.vercel.app/addProduct", formData)
       .then((res) => {
         Swal.fire({
           icon: "success",
