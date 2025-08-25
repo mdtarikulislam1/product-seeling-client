@@ -3,7 +3,7 @@ export default async function ProductDetails({params}) {
  const {id}=await params
  console.log(id)
 
-  const data = await fetch(`https://product-selling-backend.vercel.app/products/${id}`)
+  const data = await fetch(`https://product-seeling-server.vercel.app/products/${id}`)
 
   const product = await data.json()
   console.log(product)
