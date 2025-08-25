@@ -36,7 +36,6 @@ export default function AddProductForm() {
           text: "Product added successfully!",
         });
 
-        // ✅ এখন আর if লাগবে না
         formRef.current?.reset();
       })
       .catch((err) => {

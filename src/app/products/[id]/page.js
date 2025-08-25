@@ -1,8 +1,3 @@
-// import React, {  useState } from "react";
-// import { useParams } from "next/navigation";
-// import axios from "axios";
-
-// import axios from "axios";
 
 export default async function ProductDetails({params}) {
  const {id}=await params
@@ -13,15 +8,7 @@ export default async function ProductDetails({params}) {
   const product = await data.json()
   console.log(product)
  
-  // const [product, setProduct] = useState(null);
-
-  // useEffect(() => {
-  //   axios.get(`http://localhost:5000/products/${id}`)
-  //     .then(res => setProduct(res.data))
-  //     .catch(err => console.error(err));
-  // }, [id]); 
-
-  // if (!product) return <p className="mt-10 text-center">Loading...</p>;
+// ghzxdc
 
   return (
     <div className="max-w-3xl p-6 mx-auto">
