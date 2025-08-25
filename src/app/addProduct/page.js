@@ -49,7 +49,9 @@ export default function AddProductForm() {
   }, [formData]);
 
   return (
-    <div className="max-w-lg p-8 mx-auto my-10 bg-white shadow-lg rounded-2xl">
+   <div>
+    {
+      session ?  <div className="max-w-lg p-8 mx-auto my-10 bg-white shadow-lg rounded-2xl">
       <h2 className="mb-6 text-2xl font-semibold text-center">Add a Product</h2>
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
         <input
@@ -111,6 +113,8 @@ export default function AddProductForm() {
           Add Product
         </button>
       </form>
-    </div>
+    </div> : <p className="my-4 text-2xl font-semibold text-center">Please login first</p>
+    }
+   </div>
   );
 }

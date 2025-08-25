@@ -2,12 +2,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {  Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
 import Login from "../login/login";
+import { useSession } from "next-auth/react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  const { data: session } = useSession();
   // nav items list
   const navLinks = [
     { name: "Home", path: "/" },
@@ -22,7 +25,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Left - Logo */}
           <div className="flex-shrink-0 w-12 h-12">
-            <Link href="/"><img src="https://i.postimg.cc/ZKdw0M9m/business-retail-sales-computer-icons-logo-png-favpng-r-M5-E7-Zv092f2-QRytdabf8-Udby-removebg-preview.png"></img></Link>
+            <Link href="/">
+              <img src="https://i.postimg.cc/ZKdw0M9m/business-retail-sales-computer-icons-logo-png-favpng-r-M5-E7-Zv092f2-QRytdabf8-Udby-removebg-preview.png"></img>
+            </Link>
           </div>
 
           {/* Center - Nav Links (Desktop) */}
@@ -44,7 +49,7 @@ export default function Navbar() {
 
           {/* Right - Login Button */}
           <div className="hidden md:flex">
-            <Login/>
+            <Login />
           </div>
 
           {/* Mobile menu button */}
@@ -62,7 +67,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute left-0 z-40 flex flex-col w-full px-4 pb-4 space-y-3 bg-white shadow-lg md:hidden top-16">
-       <Login/>
+          <Login />
           {navLinks.map((link) => (
             <Link
               key={link.path}

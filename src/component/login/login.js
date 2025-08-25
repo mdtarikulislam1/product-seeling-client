@@ -11,7 +11,7 @@ console.log(session)
         {!session ? (
           <button
             onClick={() => signIn("google", { callbackUrl: "/products" })}
-            className="px-4 py-2 text-white bg-blue-600 rounded-md"
+            className="px-4 py-2 text-white bg-blue-600 rounded-md cursor-pointer"
           >
             Login
           </button>
@@ -25,7 +25,7 @@ console.log(session)
             />
             <button
               onClick={() => signOut()}
-              className="px-4 py-2 text-white bg-red-600 rounded-md"
+              className="px-4 py-2 text-white bg-red-600 rounded-md cursor-pointer"
             >
               Logout
             </button>
